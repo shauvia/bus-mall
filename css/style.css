@@ -17,3 +17,7 @@ font-size: 1.7em;
 figure{
   display: inline-block
 }
+img{
+  width: 300px;
+  height: 375px;
+}

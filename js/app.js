@@ -56,15 +56,21 @@ function displaysRandomPicture(imgEl, titleEl){
   displayOnePicture(imgEl, titleEl, randomObjectIndex);
 } 
 
-//function that ramdomly displays picture in 3 places/ 3 pictures;
+//function that ramdomly displays3 pictures;
 function displays3RandomPictures(){
   displaysRandomPicture(img1, title1);
   displaysRandomPicture(img2, title2);
   displaysRandomPicture(img3, title3);
 }
+
+displays3RandomPictures();
 // displayOnePicture(img1, title1, 0);
 // displayOnePicture(img2, title2, 1);
 // displayOnePicture(img3, title3, 3);
 
-displays3RandomPictures();
+//add event listeners that listens fo click on every picture and changes pistures to next three;
+
+img1.addEventListener('click', displays3RandomPictures);
+img2.addEventListener('click', displays3RandomPictures);
+img3.addEventListener('click', displays3RandomPictures);
 

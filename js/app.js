@@ -44,8 +44,6 @@ function getRandomIntInclusive(min, max){
 // console.log(getRandomIntInclusive(0, Picture.allPictures.length));
 
 
-
-
 // function that displays any picture on the page
 function displayOnePicture(imageToUpdate, titleToUpdate, index){
   imageToUpdate.src = Picture.allPictures[index].filePath;
@@ -55,14 +53,18 @@ function displayOnePicture(imageToUpdate, titleToUpdate, index){
 //create a function that randomly displays one picture
 function displaysRandomPicture(imgEl, titleEl){
   var randomObjectIndex = getRandomIntInclusive(0, Picture.allPictures.length-1);
-  var randomPicture = displayOnePicture(imgEl, titleEl, randomObjectIndex);
-  return randomPicture;
+  displayOnePicture(imgEl, titleEl, randomObjectIndex);
 } 
 
+//function that ramdomly displays picture in 3 places/ 3 pictures;
+function displays3RandomPictures(){
+  displaysRandomPicture(img1, title1);
+  displaysRandomPicture(img2, title2);
+  displaysRandomPicture(img3, title3);
+}
 // displayOnePicture(img1, title1, 0);
 // displayOnePicture(img2, title2, 1);
 // displayOnePicture(img3, title3, 3);
 
-displaysRandomPicture(img1, title1);
-
+displays3RandomPictures();
 

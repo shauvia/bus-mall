@@ -17,12 +17,12 @@ function Picture(name, fileName){
 
 Picture.allPictures = [];
 
-var newPicture = new Picture('R2D2 Bag', 'bag.jpg');
+new Picture('R2D2 Bag', 'bag.jpg');
 new Picture('Banana Slicer', 'banana.jpg');
 new Picture('Multipurpose Stand', 'bathroom.jpg');
 new Picture('Wet Rubber Boots', 'boots.jpg');
 
-console.log(newPicture);
+// console.log(newPicture);
 console.log(Picture.allPictures);
 
 var img1 = document.getElementById('picture-one'); 
@@ -34,15 +34,35 @@ var title2 = document.getElementById('caption_two');
 var title3 = document.getElementById('caption_three');
 
 
+//create a function that generated a rendom number{
+function getRandomIntInclusive(min, max){
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min; 
+}
 
-// create a function that displays one picture on the page, bu different
+// console.log(getRandomIntInclusive(0, Picture.allPictures.length));
+
+
+
+
+// function that displays any picture on the page
 function displayOnePicture(imageToUpdate, titleToUpdate, index){
   imageToUpdate.src = Picture.allPictures[index].filePath;
   titleToUpdate.textContent = Picture.allPictures[index].name;
 }
 
-displayOnePicture(img1, title1, 0);
-displayOnePicture(img2, title2, 1);
-displayOnePicture(img3, title3, 3);
+//create a function that randomly displays one picture
+function displaysRandomPicture(imgEl, titleEl){
+  var randomObjectIndex = getRandomIntInclusive(0, Picture.allPictures.length-1);
+  var randomPicture = displayOnePicture(imgEl, titleEl, randomObjectIndex);
+  return randomPicture;
+} 
+
+// displayOnePicture(img1, title1, 0);
+// displayOnePicture(img2, title2, 1);
+// displayOnePicture(img3, title3, 3);
+
+displaysRandomPicture(img1, title1);
 
 

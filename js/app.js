@@ -25,12 +25,24 @@ new Picture('Wet Rubber Boots', 'boots.jpg');
 console.log(newPicture);
 console.log(Picture.allPictures);
 
-// create a function that displays one picture on the page
-function displayOnePicture(){
-  var firstImage = document.getElementById('picture-one');
-  firstImage.src = Picture.allPictures[0].filePath;
+var img1 = document.getElementById('picture-one'); 
+var img2 = document.getElementById('picture-two');
+var img3 = document.getElementById('picture-three');
+
+var title1 = document.getElementById('caption_one'); 
+var title2 = document.getElementById('caption_two');
+var title3 = document.getElementById('caption_three');
+
+
+
+// create a function that displays one picture on the page, bu different
+function displayOnePicture(imageToUpdate, titleToUpdate, index){
+  imageToUpdate.src = Picture.allPictures[index].filePath;
+  titleToUpdate.textContent = Picture.allPictures[index].name;
 }
 
-displayOnePicture();
+displayOnePicture(img1, title1, 0);
+displayOnePicture(img2, title2, 1);
+displayOnePicture(img3, title3, 3);
 
 
